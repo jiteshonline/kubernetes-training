@@ -1,0 +1,13 @@
+kind: Pod
+apiVersion: v1
+metadata:
+  name: testservice
+  labels:
+    myvalue: demo                                # Label for applying service later
+spec:
+  containers:
+    - name: c00
+      image: httpd
+      ports:
+       - containerPort: 80                         
+

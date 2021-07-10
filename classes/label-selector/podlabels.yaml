@@ -1,0 +1,13 @@
+kind: Pod
+apiVersion: v1
+metadata:
+  name: labelspod
+  labels:                                                    # Specifies the Label details under it
+    env:  demo
+    prog: helloworld
+spec: 
+    containers:
+       - name: c00
+         image: ubuntu
+         command: ["/bin/bash", "-c", "while true; do echo Hello-myClass; sleep 5 ; done"]
+

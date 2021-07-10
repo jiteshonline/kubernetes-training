@@ -1,0 +1,14 @@
+kind: Pod
+apiVersion: v1
+metadata:
+  name: nodeselector
+  labels:
+    env: development
+spec:
+    containers:
+       - name: c00
+         image: ubuntu
+         command: ["/bin/bash", "-c", "while true; do echo Hello-myClass; sleep 5 ; done"]
+    nodeSelector:                                           # specifies which node to run the pod
+       hardware: t2-medium
+

@@ -1,0 +1,14 @@
+kind: Pod                               # Object Type
+apiVersion: v1                          # API version
+metadata:                               # Set of data which describes the Object
+  name: multcontpod                     # Name of the Object
+  labels:
+    env: dev
+spec:                                   # Data which describes the state of the Object 
+  containers:                           # Data which describes the Container details
+    - name: cont1                       # Name of the Container
+      image: ubuntu                     # Base Image which is used to create Container
+      command: ["/bin/bash", "-c", "while true; do echo Hello-cont1; sleep 5 ; done"]
+    - name: cont2                       # Name of the Container
+      image: ubuntu                     # Base Image which is used to create Container
+      command: ["/bin/bash", "-c", "while true; do echo Hello-cont2; sleep 5 ; done"]

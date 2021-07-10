@@ -1,0 +1,14 @@
+kind: Service                                   # Defines to create Service type Object
+apiVersion: v1
+metadata:
+  name: rsservice
+spec:
+  ports:
+    - port: 80                                  # Containers port exposed
+      targetPort: 80                            # Pods port
+  selector:
+    env: prod
+    tier: frontend
+  type: NodePort
+
+

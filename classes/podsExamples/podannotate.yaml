@@ -1,0 +1,17 @@
+apiVersion: v1                          # API version
+kind: Pod                               # Object Type
+metadata:                               # Set of data which describes the Object
+  name: testpod2                        # Name of the Object
+  annotations:                          # comments to describe the Object usage
+    description: our first testpod
+spec:                                   # Data which describes the state of the Object 
+  containers:                           # Data which describes the Container details
+    - name: c00                         # Name of the Container
+      image: ubuntu                     # Base Image which is used to create Container
+      command: ["/bin/bash", "-c", "while true; do echo Hello-myClass; sleep 5 ; done"]
+      env:                              # List of environment variables to be used inside the pod
+      - name: MYNAME
+        value: myClass
+
+
+
