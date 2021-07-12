@@ -1,0 +1,19 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  labels:
+    test: liveness
+  name: mylivenessprobeurl
+spec:
+  containers:
+    - name: c00
+      image: httpd
+      ports:
+       - containerPort: 80
+      livenessProbe:
+       initialDelaySeconds: 2
+       periodSeconds: 5
+       httpGet:                            # HTTP URL to check periodically
+        path: /                              # Endpoint to check inside the container / means http://localhost/
+        port: 80                            
+
