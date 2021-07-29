@@ -1,3 +1,5 @@
+minikube addons enable metrics-server
+
 Create HPA opject for autocalling myapp-deployment deployment
 kubectl autoscale deploy myapp-deployment --min 1 --max 5 --cpu-percent 10
 
