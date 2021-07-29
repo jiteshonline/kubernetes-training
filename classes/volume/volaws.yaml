@@ -1,0 +1,19 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: myvolhostpath
+spec:
+  containers:
+  - name: c1
+    image: centos
+    command: ["bin/bash", "-c", "sleep 10000"]
+    volumeMounts:                           # Mount definition inside the container
+      - name: xchange
+        mountPath: "/tmp/xchange"           # Path inside the container to share 
+  volumes:                                                           # Definition for host
+  - name: xchange
+    awsElasticBlockStore:
+      volumeID: "<volume id>"
+      fsType: ext4
+
+
