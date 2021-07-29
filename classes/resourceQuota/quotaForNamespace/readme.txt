@@ -26,3 +26,6 @@ kubectl create namespace testing
 
 8. kubectl apply -f  deploy.yaml --namespace=testing
    Default values will be used for deployment
+
+
+9. kubectl run -i --tty load-generator --rm --image=busybox --restart=Never -- /bin/sh -c "while sleep 0.01; do wget -q -O- http://10.7.149.116:31000; done"
